@@ -27,6 +27,16 @@ Either of you can draw (commander paths are **gold**, recon paths are **cyan-gre
 
 If the link fails, you will get a clear message. Check that both devices are online, try another network (some VPNs and locked-down networks block WebRTC), or stay in Solo.
 
+## What's new (v3.2)
+
+- Collision now matches the walls and buildings you can see. A yaw mismatch had been mirroring colliders away from the visible compound (the main source of "imaginary walls"). Stale leftover boxes, an inland walk-limit ring, and walk-through landmarks are gone too.
+- The walkable map edge is the real terrain rim, marked with a dashed cyan ring and posts. Steep slopes slow you down instead of hard-blocking.
+- Landmarks (the gray tower, outpost, and depot) have colliders that match their meshes, including a real doorway on the outpost.
+- Placing a base on a figure pushes that figure out to the nearest clear spot (usually just outside a gate).
+- Every mission compound and every placed base gets a **seeded random layout** — rectangle, L-shape, or irregular walls, shuffled gates, buildings, patrols, and loot. The seed syncs in a linked session, so both of you see the same base. Layouts are flood-fill checked so gates stay passable and loot stays reachable; a bad roll is thrown out and tried again.
+- **3rd person** look actually works on desktop: drag to orbit the chase camera (right = turn right), with limited pitch. Press **L** to lock the mouse, same idea as first person. Orbit controls no longer swallow those events.
+- Hidden debug: press `` ` `` (backtick) to draw collider wireframes.
+
 ## What's new (v3.1)
 
 - The default enemy compound is much larger (inner yard, more buildings and cover, more guards, loot spread inside, a main gate plus a side breach). The gold figure can walk through the gate — openings are wide enough for the collision radius, and click-to-move routes through the gate instead of sticking on the posts.
@@ -43,7 +53,7 @@ Toggle with the **Orbit / 3rd / 1st / 2D map** buttons, or press **V** or **C** 
 | View | What it is | Move / look |
 | --- | --- | --- |
 | **Orbit** | Tabletop hologram, current default | Left-drag to spin, scroll/pinch to zoom, middle-drag or Shift+left-drag to pan |
-| **3rd** | Chase camera behind your figure | WASD or joystick to move; drag (or mouse-look) to turn |
+| **3rd** | Chase camera behind your figure | WASD or joystick to move; drag to turn (right = turn right). Desktop: **L** locks the mouse |
 | **1st** | Eye-level, with a reticle | Desktop: click the view to lock the pointer, mouse-look, WASD. Phone: drag the right side of the screen to look, joystick to move |
 | **2D map** | Orthographic, north-up tactical map | Drag to pan, scroll to zoom. Shows paths, enemy markers, both figures, and the base |
 
@@ -54,7 +64,7 @@ In every view the world keeps the hologram look: glowing contour terrain, drawn 
 Infiltrate the red enemy base, grab all four intel/crates, and get back to the green **extraction** pad without being seen.
 
 - Patrolling guards have **vision cones** on the ground. Stay in a cone for a moment and you are **DETECTED** — you lose a life and reset to extraction.
-- You have **3 lives**. Walk over loot (or press **E**) to pick it up. The HUD tracks `LOOT X/4`.
+- You have **3 lives**. Walk over loot (or press **E**) to pick it up. The HUD tracks how many of the compound’s caches you have.
 - Walls block movement; use the **gate**.
 - Extract with all loot for **MISSION COMPLETE**.
 - **Restart mission** starts the run over on the same terrain. **New terrain** (or **R**) builds a fresh mountain and relocates the base (commander only in a linked session).
@@ -71,13 +81,14 @@ The world is several times larger than before, with the original infiltration ba
 | Right-drag | Draw a planning path (arrow on release) |
 | Double-click / long-press / P | Ping a spot (pulse + sound). In 1st/3rd, P pings where you are looking |
 | WASD / arrows / joystick | Move your figure |
-| Mouse-look / drag | Turn in 1st and 3rd |
+| Mouse-look / drag | Turn in 1st and 3rd (right = turn right). In 3rd, **L** toggles pointer lock |
 | Click in **Move** mode | Walk to that point (not in 1st person) |
 | Shift | Sprint |
 | E | Pick up nearby loot |
 | 1–4 | View / Draw / Place enemy / Move |
 | Z | Undo last path |
 | R | New terrain (commander) |
+| ` (backtick) | Toggle collider debug overlay |
 
 On a phone, the view-mode buttons stay large, the joystick sits in the lower left, and you can play in portrait or landscape. Turn on **Draw** to trace a path with one finger. **Place enemy** drops a red beacon; tap a beacon to remove it.
 

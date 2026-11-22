@@ -27,13 +27,22 @@ Either of you can draw (commander paths are **gold**, recon paths are **cyan-gre
 
 If the link fails, you will get a clear message. Check that both devices are online, try another network (some VPNs and locked-down networks block WebRTC), or stay in Solo.
 
+## What's new (v3.1)
+
+- The default enemy compound is much larger (inner yard, more buildings and cover, more guards, loot spread inside, a main gate plus a side breach). The gold figure can walk through the gate — openings are wide enough for the collision radius, and click-to-move routes through the gate instead of sticking on the posts.
+- **Orbit pan:** middle-drag, or Shift+left-drag. On a phone, two-finger drag pans (and pinch-zooms). The pan target stays clamped to the map. **Recenter** frames the compound again; **Center on me** jumps the view to your figure. The 2D map still pans with drag or two fingers, and has the same Center on me button.
+- **Place base** mode (key `5`): pick Small / Medium / Large, click the terrain to drop a generated enemy base (passable gates, buildings, guards, loot). Click a placed base to select it, then **Remove base** or press Delete. **Clear bases** removes every base you placed (not the main mission compound). New bases and their loot/guards count toward the mission and sync in a linked session.
+- **Follow last path:** select a drawn path by clicking it, or tap the button, and your figure walks the line (terrain-following, slides or stops on walls). **Stop** (or any manual move) cancels. Each player follows on their own device; positions still sync. Recon can follow the commander’s paths.
+- First/third-person look: mouse or drag to the right turns you right.
+- The 2D tactical map now shows a clear red compound outline, a gold (or green) figure icon, and red guard markers.
+
 ## Camera / view modes
 
 Toggle with the **Orbit / 3rd / 1st / 2D map** buttons, or press **V** or **C** to cycle.
 
 | View | What it is | Move / look |
 | --- | --- | --- |
-| **Orbit** | Tabletop hologram, current default | Left-drag to spin, scroll/pinch to zoom |
+| **Orbit** | Tabletop hologram, current default | Left-drag to spin, scroll/pinch to zoom, middle-drag or Shift+left-drag to pan |
 | **3rd** | Chase camera behind your figure | WASD or joystick to move; drag (or mouse-look) to turn |
 | **1st** | Eye-level, with a reticle | Desktop: click the view to lock the pointer, mouse-look, WASD. Phone: drag the right side of the screen to look, joystick to move |
 | **2D map** | Orthographic, north-up tactical map | Drag to pan, scroll to zoom. Shows paths, enemy markers, both figures, and the base |
